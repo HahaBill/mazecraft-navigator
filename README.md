@@ -1,0 +1,1 @@
+# mazecraft-navigator
