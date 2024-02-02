@@ -1,3 +1,3 @@
 # MazeCraft Navigator
 
-build with only HTML, CSS and Javascript
+### build with only HTML, CSS, and Javascript
