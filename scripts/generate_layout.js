@@ -3,11 +3,12 @@ const mainElement = document.querySelector('main');
 const footerElement = document.querySelector('footer');
 const sidenavElement = document.querySelector('nav');
 
-const tools = ['start', 'end', 'checkpoint', 'wall'];
+const tools = ['map', 'start', 'end', 'checkpoint', 'wall'];
+const algorithms = ['dfs', 'bfs', 'dijkstra', 'a_star', 'mst'];
 
-function createHeaderTool(num) {
+function createHeaderTool(tool) {
     let toolElement = document.createElement('button');
-    toolElement.textContent = `tool_${num}`;
+    toolElement.textContent = `${tool}`;
 
     toolElement.style.backgroundColor = "lightblue";
     toolElement.style.width = "80px";
@@ -17,11 +18,11 @@ function createHeaderTool(num) {
     return toolElement;
 }
 
-function createAlgorithmsChoice(num) {
+function createAlgorithmsChoice(algorithm) {
     let algorithmElement = document.createElement('button');
-    algorithmElement.textContent = `algorithm-${num}`;
+    algorithmElement.textContent = `${algorithm}`;
 
-    algorithmElement.backgroundColor = "lightblue";
+    algorithmElement.style.backgroundColor = "lightblue";
     algorithmElement.style.width = "80px";
     algorithmElement.style.height = "80px";
     algorithmElement.style.borderRadius = "8px";
@@ -30,23 +31,6 @@ function createAlgorithmsChoice(num) {
 }
 
 (() => {
-    for(let i = 0; i < 4; i++) {
-        headerElement.appendChild(createHeaderTool(i));
-    }
-
-    for(let i = 0; i < 6; i++) {
-        sidenavElement.appendChild(createAlgorithmsChoice(i));
-    }
+    tools.forEach((tool) => headerElement.appendChild(createHeaderTool(tool)));
+    algorithms.forEach((algorithm) => sidenavElement.appendChild(createAlgorithmsChoice(algorithm)));
 })();
-
-/*
-
-function createNumber(number) {
-    let element = document.createElement("DIV");
-    element.textContent = number;
-    element.addEventListener("click", () => {
-    addNewDigit(number);
-    updateScreen();
-});
-
-*/
