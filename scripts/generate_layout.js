@@ -1,9 +1,9 @@
 const headerElement = document.querySelector('header');
-const sidenavElement = document.querySelector('nav');
 const mainElement = document.querySelector('main');
 const footerElement = document.querySelector('footer');
+const sidenavElement = document.querySelector('nav');
 
-const tools = ['', '', ''];
+const tools = ['start', 'end', 'checkpoint', 'wall'];
 
 function createHeaderTool(num) {
     let toolElement = document.createElement('button');
