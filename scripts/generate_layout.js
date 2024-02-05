@@ -89,6 +89,10 @@ function handleAlgorithm(algorithm) {
     }
 }
 
+function createGridMap() {
+    const gridContainer = document.getElementById('grid-container');
+}
+
 (() => {
     tools.forEach((tool) => headerElement.appendChild(createHeaderTool(tool)));
     algorithms.forEach((algorithm) => sidenavElement.appendChild(createAlgorithmsChoice(algorithm)));
