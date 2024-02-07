@@ -40,3 +40,11 @@ nav {
     border-radius: 20px;
     z-index: 2;
 }
+
+.show {
+    display: block;
+}
+
+.dropdown-content {
+    background-color: brown;
+}

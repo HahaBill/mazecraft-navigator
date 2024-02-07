@@ -13,6 +13,7 @@ let selectedAlgorithm = '';
 
 function createHeaderTool(tool) {
     let toolElement = document.createElement('button');
+    toolElement.className = tool;
     toolElement.textContent = `${tool}`;
 
     toolElement.addEventListener('click', () => {
@@ -48,7 +49,7 @@ function createAlgorithmsChoice(algorithm) {
 function handleTool(tool) {
     switch(tool) {
         case 'map':
-            console.log(`Selected tool: ${tool}.`)
+            openMapDropdown();
             break
         case 'start':
             console.log(`Selected tool: ${tool}.`)
@@ -89,8 +90,22 @@ function handleAlgorithm(algorithm) {
     }
 }
 
+function openMapDropdown() {
+    document.getElementById("map-form-dropdown").classList.toggle("show");
+  }
+  
+  window.onclick = function(e) {
+    if (!e.target.matches('.map')) {
+    var map_dropdown = document.getElementById("map-form-dropdown");
+      if (map_dropdown.classList.contains('show')) {
+        map_dropdown.classList.remove('show');
+      }
+    }
+  }
+
 function createGridMap() {
     const gridContainer = document.getElementById('grid-container');
+
 }
 
 (() => {
