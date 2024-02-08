@@ -23,7 +23,11 @@ header {
     height: 12%;
     border-radius: 20px;
     z-index: 2;
+
+    float: left;
+    overflow: hidden
 }
+
 
 nav {
     display: flex;
@@ -41,10 +45,18 @@ nav {
     z-index: 2;
 }
 
-.show {
-    display: block;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: red;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 3;
 }
 
-.dropdown-content {
-    background-color: brown;
+.show {
+    display: block;
+    background-color: chartreuse;
 }

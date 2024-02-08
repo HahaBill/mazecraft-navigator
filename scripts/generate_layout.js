@@ -91,6 +91,7 @@ function handleAlgorithm(algorithm) {
 }
 
 function openMapDropdown() {
+    console.log("form dropdown to indicate x and y od the grid.")
     document.getElementById("map-form-dropdown").classList.toggle("show");
   }
   
