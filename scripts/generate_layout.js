@@ -13,7 +13,7 @@ let selectedAlgorithm = '';
 
 function createHeaderTool(tool) {
     let toolElement = document.createElement('button');
-    toolElement.className = tool;
+    toolElement.className = `${tool}-btn`;
     toolElement.textContent = `${tool}`;
 
     toolElement.addEventListener('click', () => {
@@ -95,14 +95,17 @@ function openMapDropdown() {
     document.getElementById("map-form-dropdown").classList.toggle("show");
   }
   
-  window.onclick = function(e) {
-    if (!e.target.matches('.map')) {
-    var map_dropdown = document.getElementById("map-form-dropdown");
-      if (map_dropdown.classList.contains('show')) {
-        map_dropdown.classList.remove('show');
-      }
+
+document.addEventListener('click', function toggleMapDropdown(e) {
+    let map_form_dropdown = document.getElementById("map-form-dropdown");
+    let isMapBtn = e.target.matches(".map-btn");
+
+    if(!map_form_dropdown.contains(e.target) && !isMapBtn) {
+        if(map_form_dropdown.classList.contains("show")) {
+            map_form_dropdown.classList.remove("show");
+        }
     }
-  }
+})
 
 function createGridMap() {
     const gridContainer = document.getElementById('grid-container');
