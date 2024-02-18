@@ -109,7 +109,7 @@ document.addEventListener('click', function toggleMapDropdown(e) {
 
 function createGridMap() {
     const gridContainer = document.getElementById('grid-container');
-
+    
 }
 
 (() => {
