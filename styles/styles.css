@@ -67,5 +67,4 @@ nav {
 #map-list-dropdown {
     display: flex;
     flex-direction: column;
-    list-style-type: none;
 }

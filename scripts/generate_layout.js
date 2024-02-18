@@ -3,6 +3,8 @@ const mainElement = document.querySelector('main');
 const footerElement = document.querySelector('footer');
 const sidenavElement = document.querySelector('nav');
 
+const mapForm = document.getElementById('define-map-dimensions');
+
 const tools = ['map', 'start', 'end', 'checkpoint', 'wall'];
 const algorithms = ['dfs', 'bfs', 'dijkstra', 'a_star', 'mst'];
 
@@ -105,11 +107,15 @@ document.addEventListener('click', function toggleMapDropdown(e) {
             map_form_dropdown.classList.remove("show");
         }
     }
-})
+});
+
+mapForm.addEventListener('submit', function handleMapForm(e) {
+    console.log("Submitted!");
+});
 
 function createGridMap() {
     const gridContainer = document.getElementById('grid-container');
-    
+
 }
 
 (() => {
