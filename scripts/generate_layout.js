@@ -4,12 +4,16 @@ const footerElement = document.querySelector('footer');
 const sidenavElement = document.querySelector('nav');
 
 const mapForm = document.getElementById('define-map-dimensions');
+const map_form_dropdown = document.getElementById("map-form-dropdown");
 
 const tools = ['map', 'start', 'end', 'checkpoint', 'wall'];
 const algorithms = ['dfs', 'bfs', 'dijkstra', 'a_star', 'mst'];
 
 let selectedTool = '';
 let selectedAlgorithm = '';
+
+let mapWidth = 5;
+let mapHeight = 5;
 
 ////// Generating tools and algorithms //////
 
@@ -93,14 +97,14 @@ function handleAlgorithm(algorithm) {
 }
 
 function openMapDropdown() {
-    console.log("form dropdown to indicate x and y od the grid.")
-    document.getElementById("map-form-dropdown").classList.toggle("show");
+    console.log("form dropdown to indicate x and y od the grid.");
+    console.log(`current map width: ${mapWidth}, current map height: ${mapHeight}`);
+    map_form_dropdown.classList.toggle("show");
   }
   
 
 document.addEventListener('click', function toggleMapDropdown(e) {
-    let map_form_dropdown = document.getElementById("map-form-dropdown");
-    let isMapBtn = e.target.matches(".map-btn");
+    const isMapBtn = e.target.matches(".map-btn");
 
     if(!map_form_dropdown.contains(e.target) && !isMapBtn) {
         if(map_form_dropdown.classList.contains("show")) {
@@ -110,7 +114,15 @@ document.addEventListener('click', function toggleMapDropdown(e) {
 });
 
 mapForm.addEventListener('submit', function handleMapForm(e) {
-    console.log("Submitted!");
+    e.preventDefault()
+
+    const submittedWidth = document.getElementById('map-width').value;
+    const submittedHeight = document.getElementById('map-height').value;
+
+    mapWidth = submittedWidth;
+    mapHeight = submittedHeight;
+
+    map_form_dropdown.classList.remove("show");
 });
 
 function createGridMap() {
