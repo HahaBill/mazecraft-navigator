@@ -34,6 +34,6 @@ class Map {
     }
 
     constructGraph() {
-
+        
     }
 }

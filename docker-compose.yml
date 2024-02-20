@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+
+  frontend-mazecraft-navigator:
+    build: 
+      context: ./frontend-maze-navigator
+      dockerfile: Dockerfile.frontend-production
+    image: 'frontend_maze_navigator_image'
+    container_name: 'frontend_maze_navigator_container'
+    networks:
+      - mazecraft_navigator_network
+  
+  backend-mazecraft_navigator:
+    build: 
+      context: ./backend-maze-navigator
+      dockerfile: Dockerfile.backend-production
+    image: 'backend_maze_navigator_image'
+    container_name: 'backend_maze_navigator_container'
+    networks:
+      - mazecraft_navigator_network
+
+networks:
+  mazecraft_navigator_network:
+    name: 'mazecraft_navigator_network'
