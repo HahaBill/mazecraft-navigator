@@ -7,7 +7,7 @@ const mapForm = document.getElementById('define-map-dimensions');
 const map_form_dropdown = document.getElementById("map-form-dropdown");
 
 const tools = ['map', 'start', 'end', 'checkpoint', 'wall'];
-const algorithms = ['dfs', 'bfs', 'dijkstra', 'a_star', 'mst'];
+const algorithms = ['dfs', 'bfs', 'dijkstra', 'a_star', 'mst', 'custom'];
 
 let selectedTool = '';
 let selectedAlgorithm = '';
