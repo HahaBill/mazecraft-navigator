@@ -26,11 +26,18 @@ class Map {
         this.num_checkpoints = num_checkpoints;
         this.start = start;
         this.end = end;
-        this.graph = this.constructGraph();
+        this.graph = null;
+        this.gridMap = [];
+
+        this.constructGraph();
     }
 
     get graph() {
         return this.graph;
+    }
+
+    get gridMap() {
+        return this.gridMap;
     }
 
     constructGraph() {
